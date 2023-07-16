@@ -63,7 +63,7 @@ export const forgotPassword = async (req, res) => {
         const token = crypto.randomBytes(20).toString('hex');
         const result = await ResetPassword.create({user: user._id, email, token});
 
-    await newPassword({email, name: user.firstName, link: "https://flipkart-iota.vercel.app/reset-password/"+token});
+    await newPassword({email, name: user.firstName, link: "https://udyam-well-assignment.vercel.app/reset-password/"+token});
     res.json({ message: 'Password reset email sent' });
   } catch (err) {
     console.error('Error resetting password:', err);
