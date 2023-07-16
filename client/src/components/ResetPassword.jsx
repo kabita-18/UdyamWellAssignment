@@ -26,7 +26,9 @@ export default function ResetPassword() {
 
     if(password === confirmPassword){
         resetPassword(token, {password: password}).then(()=>{
-            navigate("/login")
+            navigate("/sign-in")
+        }).catch(error=>{
+          alert(error.message);
         })
     }else{
         alert("Password doesn't match")
